@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shawlynot_quant"
+description = "titanic_ml example package"
+version = "0.1.0"
+authors = [{ name = "shawlynot" }]
+dependencies = ["numpy", "pandas", "mypy", "polygon-api-client", "pandas-stubs"]
+classifiers = ["Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+dev = ["mypy", "pip-tools"]
