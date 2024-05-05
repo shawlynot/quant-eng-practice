@@ -11,12 +11,15 @@ class PolygonClient:
     def __init__(self) -> None:
         self.client = RESTClient(os.environ.get("POLYGON_KEY"))
 
-    def historical_for_tickers(self, tickers: list[str], start: date, end: date):
-        
+    def historical_for_tickers(self, tickers: list[str], start: date, end: date) -> pd.DataFrame:
+        out: dict = {}
         for ticker in tickers:
             from_api: list[Agg] = self.client.get_aggs(ticker=ticker, from_=start, to=end, multiplier=1, timespan="day")
-            # TODO: PANDAS
+            out[ticker] = pd.Series([agg.open for agg in from_api], index=[agg.timestamp for agg in from_api])
+        return pd.DataFrame(out)
+        
             
             
-            
-            
+if __name__ == "__main__":
+    client = PolygonClient()
+    print(client.historical_for_tickers(["AAPL", "GOOG"], date(2022, 5, 1), date(2024, 5, 1)))
