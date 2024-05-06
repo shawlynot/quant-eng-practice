@@ -2,5 +2,6 @@
 .idea
 .mypy_cache
 .vscode
+.cache
 /*.egg-info
 __pycache__
