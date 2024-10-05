@@ -7,8 +7,11 @@ name = "shawlynot_quant"
 description = "titanic_ml example package"
 version = "0.1.0"
 authors = [{ name = "shawlynot" }]
-dependencies = ["numpy", "pandas", "mypy", "polygon-api-client", "pandas-stubs", "pyarrow", "matplotlib"]
+dependencies = ["numpy", "pandas", "mypy", "polygon-api-client", "pandas-stubs", "pyarrow", "matplotlib", "scipy"]
 classifiers = ["Programming Language :: Python :: 3"]
 
 [project.optional-dependencies]
 dev = ["mypy", "pip-tools"]
+
+[tool.mypy]
+plugins = "numpy.typing.mypy_plugin"

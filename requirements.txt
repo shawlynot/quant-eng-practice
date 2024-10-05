@@ -27,6 +27,7 @@ numpy==1.26.4
     #   pandas
     #   pandas-stubs
     #   pyarrow
+    #   scipy
     #   shawlynot_quant (pyproject.toml)
 packaging==24.0
     # via matplotlib
@@ -48,6 +49,8 @@ python-dateutil==2.9.0.post0
     #   pandas
 pytz==2024.1
     # via pandas
+scipy==1.14.1
+    # via shawlynot_quant (pyproject.toml)
 six==1.16.0
     # via python-dateutil
 types-pytz==2024.1.0.20240417
