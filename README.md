@@ -1,0 +1,1 @@
+Practicing some basic quantitative finance things
