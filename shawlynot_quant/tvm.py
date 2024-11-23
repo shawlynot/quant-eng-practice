@@ -10,4 +10,4 @@ def future_continuous_value(present_value, rate, time):
     return present_value*exp(r*t)
 
 def present_continuous_value(future_value, rate, time):
-    return present_value*exp(-r*t)
+    return future_value*exp(-r*t)
